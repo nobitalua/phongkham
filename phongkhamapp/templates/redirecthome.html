@@ -1,0 +1,29 @@
+{% load static %}
+
+{% ifequal error "no" %}
+    {% ifequal page "doctor" %}
+    <script type="text/javascript">
+        alert('Đăng Nhập thành công ')
+        window.location = ('{% url 'home' %}')
+    </script>
+    {% endifequal %}
+    {% ifequal page "reception" %}
+    <script type="text/javascript">
+        alert('Đăng Nhập thành công')
+        window.location = ('{% url 'home' %}')
+    </script>
+    {% endifequal %}
+    {% ifequal page "patient" %}
+    <script type="text/javascript">
+        alert('Đăng Nhập thành công')
+        window.location = ('{% url 'home' %}')
+    </script>
+    {% endifequal %}
+{% endifequal%}
+
+{% ifequal error "yes" %}
+<script type="text/javascript">
+    alert('Đăng Nhập không thành công')
+    window.location=('{% url 'loginpage' %}')
+</script>
+{% endifequal%}
